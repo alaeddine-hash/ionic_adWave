@@ -1,0 +1,100 @@
+fire base config:
+
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAdumIec5Cy_yAblbfMEp-iu2HcCuECuis",
+  authDomain: "adwave-b4dc4.firebaseapp.com",
+  projectId: "adwave-b4dc4",
+  storageBucket: "adwave-b4dc4.appspot.com",
+  messagingSenderId: "529834124668",
+  appId: "1:529834124668:web:f0d619893b9dd1ccac30f9",
+  measurementId: "G-V76V2NGNKQ"
+},
+
+// Initialize Firebase
+
+
+const app = initializeApp(environement.firebaseConfig);
+
+***********************************************************************
+***********************************************************************
+
+Bien sûr, voici une liste de besoins fonctionnels et non fonctionnels pour votre mini-projet Ionic d'application de gestion des annonces :
+
+**Besoins fonctionnels :**
+
+1. **Authentification utilisateur :**
+   - Les utilisateurs doivent pouvoir s'inscrire et se connecter avec leur adresse e-mail et un mot de passe.
+   - Les utilisateurs doivent également avoir la possibilité de se connecter avec des comptes de médias sociaux (par exemple, Google, Facebook) s'ils le souhaitent.
+
+2. **Ajout d'annonces :**
+   - Les utilisateurs connectés peuvent ajouter des annonces.
+   - Chaque annonce doit inclure un titre, une description, une catégorie (parmi les deux catégories disponibles), et éventuellement des images.
+
+3. **Consultation d'annonces :**
+   - Les utilisateurs peuvent consulter toutes les annonces disponibles dans les deux catégories.
+   - Les utilisateurs peuvent filtrer les annonces par catégorie.
+   - Les utilisateurs peuvent consulter les détails complets d'une annonce en cliquant sur celle-ci.
+
+4. **Gestion des annonces personnelles :**
+   - Les utilisateurs connectés peuvent consulter une liste de leurs propres annonces.
+   - Les utilisateurs peuvent modifier ou supprimer leurs propres annonces.
+
+5. **Fonctionnalités de recherche :**
+   - Les utilisateurs doivent pouvoir rechercher des annonces par mots-clés.
+   - Les résultats de la recherche doivent être pertinents et affichés de manière conviviale.
+
+6. **Notifications (en option) :**
+   - Les utilisateurs peuvent recevoir des notifications pour de nouvelles annonces ou des mises à jour sur leurs annonces.
+   - Les notifications peuvent être envoyées par e-mail ou directement à l'application.
+
+7. **Interaction utilisateur :**
+   - Les utilisateurs peuvent interagir avec les annonces en ajoutant des commentaires ou en envoyant des messages aux annonceurs.
+
+8. **Gestion des catégories :**
+   - Les administrateurs (le cas échéant) doivent pouvoir ajouter, modifier ou supprimer des catégories d'annonces.
+
+**Besoins non fonctionnels :**
+
+1. **Design et Expérience Utilisateur (UX) :**
+   - L'application doit avoir une interface utilisateur attrayante et conviviale.
+   - Les annonces doivent être présentées de manière esthétique avec des images et des descriptions claires.
+
+2. **Performance :**
+   - L'application doit être réactive, même avec une grande quantité d'annonces.
+   - Les temps de chargement des annonces et des images doivent être optimisés.
+
+3. **Sécurité :**
+   - Les données des utilisateurs (y compris les annonces) doivent être stockées de manière sécurisée.
+   - Les mots de passe doivent être stockés de manière sécurisée en utilisant le hachage.
+
+4. **Disponibilité :**
+   - L'application doit être disponible en permanence, avec un temps d'arrêt minimal pour la maintenance.
+
+5. **Évolutivité :**
+   - L'application doit être extensible pour gérer une augmentation potentielle du nombre d'utilisateurs et d'annonces.
+
+6. **Sauvegarde et récupération des données :**
+   - Les données de l'application doivent être sauvegardées régulièrement pour éviter toute perte de données.
+
+7. **Gestion des erreurs et des exceptions :**
+   - L'application doit gérer les erreurs de manière à ce que les utilisateurs reçoivent des messages d'erreur informatifs.
+
+8. **Interopérabilité :**
+   - L'application doit être compatible avec les dernières versions d'Ionic et des plateformes mobiles (Android et iOS).
+
+9. **Conformité aux réglementations :**
+   - L'application doit respecter les réglementations locales concernant la gestion des données personnelles et de la vie privée.
+
+10. **Tests et Qualité du Code :**
+    - L'application doit être rigoureusement testée pour assurer la qualité du code et minimiser les bugs.
+
+11. **Support Multilingue (en option) :**
+    - L'application peut offrir la prise en charge de plusieurs langues pour atteindre un public plus large.
+
+Ces exigences fonctionnelles et non fonctionnelles fournissent une base solide pour le développement de votre application
+ de gestion des annonces avec Ionic. Veillez à les suivre tout au long du processus de développement pour garantir que votre application est fonctionnelle,
+ sécurisée et agréable à utiliser.
+
+/add-announcement
