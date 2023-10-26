@@ -1,0 +1,77 @@
+
+<ion-menu side="end" contentId="main-content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>adWave Menu</ion-title>
+      <ion-buttons slot="end">
+        <ion-select [(ngModel)]="selectedCategory" (ionChange)="filterByCategory()">
+          <ion-select-option value="Toutes">Toutes</ion-select-option>
+          <ion-select-option *ngFor="let category of categories" [value]="category">{{category}}</ion-select-option>
+        </ion-select>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-list>
+      <ion-item (click)="navigateToPage('all-ads')">
+        <ion-icon name="albums"></ion-icon>
+        Tous Les Annonces
+      </ion-item>
+      <ion-item (click)="navigateToPage('user-ads')">
+        <ion-icon name="albums"></ion-icon>
+        Mes Annonces
+      </ion-item>
+      <ion-item (click)="navigateToPage('add-ad')">
+        <ion-icon name="add-circle"></ion-icon>
+        Ajouter une annonce
+      </ion-item>
+      <ion-item (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+        Logout
+      </ion-item>
+    </ion-list>
+    
+  </ion-content></ion-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>adWave</ion-title>
+      <ion-buttons slot="end">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content [fullscreen]="true" [scrollY]="true">
+  <div class="bg-img">
+    <h1>Aujourd'hui</h1>
+    <h5>{{ currentDate | date }}</h5>
+
+    <!-- Barre de recherche -->
+    <ion-searchbar [(ngModel)]="searchText" (ionChange)="onSearchChange()"></ion-searchbar>
+
+    <ion-list>
+      <ion-card *ngFor="let ad of filteredAds">
+        <img [src]="ad.image" alt="Ad Image" style="width: 100%; height: 100%;">
+        <ion-item lines="none" detail="false" class="ad-item">
+          <!-- Removed ion-buttons and buttons for checkboxes -->
+          <ion-label class="ad-info">
+            <h3>{{ ad.titre }}</h3>
+            <ion-badge color="medium" item-end>{{ ad.price | currency: 'USD' }}</ion-badge>
+          </ion-label>
+          <ion-label class="description" text-right>
+            <div class="description-text">
+            <p>{{ ad.description }}</p>
+          </div>
+            <p>Category: {{ ad.category }}</p>
+            <ion-badge color="medium">{{ ad.date | date: 'shortTime' }}</ion-badge>
+          </ion-label>
+        </ion-item>
+        <!-- Removed ion-item-sliding -->
+      </ion-card>
+    </ion-list>
+  </div>
+</ion-content>
+</div>
+
+

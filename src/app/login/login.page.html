@@ -1,0 +1,45 @@
+
+<ion-menu side="end" contentId="main-content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>adWave Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-list>
+      <ion-item (click)="navigateToPage('register')">Register</ion-item>
+    </ion-list>
+  </ion-content></ion-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>adWave</ion-title>
+      <ion-buttons slot="end">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content [fullscreen]="true">
+    <div class="bg-img">
+      <img class="background-image" src="https://www.trade.gov.pl/wp-content/uploads/2023/05/adwave.png" alt="Background Image">
+      <div class="center-content">
+        <ion-list class="input-list">
+          <ion-item>
+            <ion-label position="stacked">Email</ion-label>
+            <ion-input type="text" [(ngModel)]="email" placeholder="Enter your email" class="input-field"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Password</ion-label>
+            <ion-input type="password" [(ngModel)]="password" placeholder="Enter your password" class="input-field"></ion-input>
+          </ion-item>
+        </ion-list>
+  
+        <ion-button expand="block" (click)="login()" class="login-button">Login</ion-button>
+        <ion-button expand="block" routerLink="/register" class="create-account-button">Create Account</ion-button>
+      </div>
+    </div>
+  </ion-content>
+</div>
+
+

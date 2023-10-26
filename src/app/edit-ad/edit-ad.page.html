@@ -1,0 +1,72 @@
+<ion-menu side="end" contentId="main-content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>adWave Menu</ion-title>
+      <ion-buttons slot="end">
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-list>
+      <ion-item (click)="navigateToPage('all-ads')">
+        <ion-icon name="albums"></ion-icon>
+        Tous Les Annonces
+      </ion-item>
+      <ion-item (click)="navigateToPage('user-ads')">
+        <ion-icon name="albums"></ion-icon>
+        Mes Annonces
+      </ion-item>
+      <ion-item (click)="navigateToPage('add-ad')">
+        <ion-icon name="add-circle"></ion-icon>
+        Ajouter une annonce
+      </ion-item>
+      <ion-item (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+        Logout
+      </ion-item>
+    </ion-list>
+    
+  </ion-content></ion-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>adWave</ion-title>
+      <ion-buttons slot="end">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Title</ion-label>
+        <ion-input [(ngModel)]="editedAd.titre" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Description</ion-label>
+        <ion-textarea [(ngModel)]="editedAd.description"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Price</ion-label>
+        <ion-input [(ngModel)]="editedAd.price" type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Category</ion-label>
+        <ion-select [(ngModel)]="editedAd.category">
+          <ion-select-option value="Category1">Immobilier</ion-select-option>
+          <ion-select-option value="Category2">Électronique</ion-select-option>
+          <!-- Add more categories as needed -->
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Image</ion-label>
+        <ion-input [(ngModel)]="editedAd.image" type="text"></ion-input>
+      </ion-item>
+    </ion-list>
+  
+    <ion-button expand="full" (click)="saveChanges()">Enregistrer l'annonce</ion-button>
+  </ion-content>
+  
+  

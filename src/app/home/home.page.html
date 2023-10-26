@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      AdWave
+    </ion-title>
+    <!-- Utilisez "ion-buttons" pour aligner le sélecteur à droite -->
+    <ion-buttons slot="end">
+      <ion-select [(ngModel)]="selectedCategory" (ionChange)="filterByCategory()">
+        <ion-select-option value="Toutes">Toutes</ion-select-option>
+        <ion-select-option *ngFor="let category of categories" [value]="category">{{category}}</ion-select-option>
+      </ion-select>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" [scrollY]="true">
+  <div class="bg-img">
+    <h1>Aujourd'hui</h1>
+    <h5>{{ currentDate | date }}</h5>
+
+    <!-- Barre de recherche -->
+    <ion-searchbar [(ngModel)]="searchText" (ionChange)="onSearchChange()"></ion-searchbar>
+
+    <ion-list>
+      <ion-card *ngFor="let ad of filteredAds">
+        <ion-item-sliding>
+          <img [src]="ad.image" alt="Ad Image" style="width: 100%; height: 100%;">
+          <ion-item lines="none" detail="false" class="ad-item">
+            <ion-button slot="end" (click)="presentAlert(ad.id)" fill="clear" color="danger">
+              <ion-icon name="trash-bin"></ion-icon>
+            </ion-button> 
+            <ion-checkbox (ionChange)="changeChecked(ad)" [checked]="ad.checked" class="ion-margin-end"></ion-checkbox>
+            <ion-label class="ad-info">
+              <h3 *ngIf="!ad.checked">{{ ad.titre }}</h3>
+              <ion-badge color="medium" item-end>{{ ad.price | currency: 'USD' }}</ion-badge>
+            </ion-label>
+            <ion-label class="description" text-right>
+              <p *ngIf="!ad.checked">{{ ad.description }}</p>
+              <p *ngIf="!ad.checked">Category: {{ ad.category }}</p>
+              <ion-badge color="medium">{{ ad.date | date: 'shortTime' }}</ion-badge>
+            </ion-label>
+          </ion-item>
+        </ion-item-sliding>
+      </ion-card>
+    </ion-list>
+
+    <ion-card *ngIf="!showButton">
+      <ion-item>
+        <ion-button (click)="redirectToAdCreationForm()">
+          <ion-icon name="add-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-card>
+
+    <ion-card>
+      <ion-button *ngIf="showButton" expand="block" (click)="redirectToAdCreationForm()">Ajouter une annonce</ion-button>
+      <ion-button color="success" *ngIf="!showButton" expand="block" (click)="toggleButton()">Annuler</ion-button>
+    </ion-card>
+  </div>
+</ion-content>

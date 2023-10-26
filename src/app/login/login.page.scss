@@ -1,0 +1,46 @@
+ion-content {
+  --background: transparent; /* Remove default Ionic background color */
+
+  .bg-img {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Adjust the height as needed */
+
+    .background-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+
+      /* Adjust z-index if necessary */
+    }
+
+    /* Add additional styling to center content or adjust content position */
+   // .center-content {
+     // position: absolute;
+     //top: 50%;
+     // left: 50%;
+     // transform: translate(-50%, -50%);
+      //text-align: center;
+     // color: #3012da; /* Change text color as needed */
+    //  font-size: 16px; /* Adjust font size as needed */
+   // }
+
+    /* Style your input fields, buttons, etc. as needed */
+    .input-field {
+      font-size: 20px; /* Adjust input field font size */
+      width: 100%; /* Take the full width */
+      max-width: 100%;
+    }
+
+    .login-button,
+    .create-account-button {
+      width: 100%; /* Make buttons full width */
+    }
+
+  
+
+  }
+}

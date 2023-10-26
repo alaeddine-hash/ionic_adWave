@@ -1,0 +1,36 @@
+<!-- ad-form.component.html -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Create New Ad</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label>Title</ion-label>
+      <ion-input [(ngModel)]="ad.titre" name="titre" type="text" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Description</ion-label>
+      <ion-textarea [(ngModel)]="ad.description" name="description" required></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label>Price</ion-label> <!-- Add a new item for the price field -->
+      <ion-input [(ngModel)]="ad.price" name="price" type="number" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Image</ion-label> <!-- Add a new item for the price field -->
+      <ion-input [(ngModel)]="ad.image" name="image" type="url" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Category</ion-label>
+      <ion-select [(ngModel)]="ad.category" name="category" required>
+        <ion-select-option value="Immobilier">Immobilier</ion-select-option>
+        <ion-select-option value="Électronique">Électronique</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <!-- You can add more input fields for images, etc. -->
+    <ion-button expand="full" type="submit">ajouter une annonce</ion-button>
+  </form>
+</ion-content>

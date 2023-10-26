@@ -1,0 +1,22 @@
+.bg-img {
+    padding: 1px;
+    height: 100%;
+    width: 100%;
+    //background-color: red;
+    background-image: url("../../assets/background.jpg");
+    //background-repeat: repeat-y;
+    background-size: cover;
+  }
+
+  .center-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust the height to your needs */
+    text-align: center;
+    width: 100%; /* Adjust the width to your needs */
+    color: #333; /* Change to a suitable text color */
+    font-size: 16px; /* Adjust the font size as needed */
+  
+  }
